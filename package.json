@@ -1,0 +1,71 @@
+{
+  "name": "data-repl-test",
+  "displayName": "Data REPL Test",
+  "description": "Data REPL Test",
+  "version": "0.0.8",
+  "engines": {
+    "vscode": "^1.89.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/akphi/legend-repl-test"
+  },
+  "categories": [
+    "Other"
+  ],
+  "publisher": "akphi",
+  "activationEvents": [],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "commands": [],
+    "configuration": {
+      "type": "object",
+      "title": "Data REPL Test Configuration",
+      "properties": {
+        "repl.agGridLicense": {
+          "type": "string",
+          "default": "",
+          "description": "Set the AgGrid License to enable enterprise features."
+        },
+        "repl.jarDownloadUrl": {
+          "type": "string",
+          "default": "https://github.com/akphi/legend-repl-test/releases/download/beta_1/legend-repl-{{version}}.jar",
+          "description": "Set the URL from where the REPL jar can be downloaded."
+        }
+      }
+    },
+    "terminal": {
+      "profiles": [
+        {
+          "id": "legend-repl-test.terminal.repl",
+          "title": "Legend REPL (test)"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "compile": "tsc -b",
+    "watch": "webpack --watch --mode development",
+    "package": "webpack --mode production --devtool hidden-source-map",
+    "lint": "eslint src --ext ts",
+    "publish:prepare": "npm run package && vsce package -o data-repl-test-vscode.vsix",
+    "publish:marketplace": "vsce publish -i data-repl-test-vscode.vsix",
+    "publish:openvsx": "ovsx publish -i data-repl-test-vscode.vsix"
+  },
+  "devDependencies": {
+    "@types/node": "20.14.10",
+    "@types/vscode": "^1.89.0",
+    "@typescript-eslint/eslint-plugin": "7.16.0",
+    "@typescript-eslint/parser": "7.16.0",
+    "@vscode/vsce": "2.29.0",
+    "eslint": "8.57.0",
+    "ovsx": "0.9.1",
+    "ts-loader": "9.5.1",
+    "typescript": "5.5.3",
+    "webpack": "5.92.1",
+    "webpack-cli": "5.1.4"
+  },
+  "dependencies": {
+    "get-port": "7.1.0"
+  }
+}

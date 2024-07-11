@@ -1,0 +1,12 @@
+# OS
+.DS_STORE
+*.swp
+*~
+[Dd]esktop.ini
+Thumbs.db
+
+out
+dist
+node_modules
+*.vsix
+*.jar
