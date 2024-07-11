@@ -9,4 +9,4 @@ out
 dist
 node_modules
 *.vsix
-*.jar
+repl/**

@@ -2,7 +2,7 @@
   "name": "data-repl-test",
   "displayName": "Data REPL Test",
   "description": "Data REPL Test",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "engines": {
     "vscode": "^1.89.0"
   },
@@ -17,15 +17,21 @@
   "activationEvents": [],
   "main": "./dist/extension.js",
   "contributes": {
-    "commands": [],
+    "commands": [
+      {
+        "command": "legend-repl-test.command.refreshJar",
+        "title": "Re-download REPL JAR",
+        "category": "Data REPL Test"
+      }
+    ],
     "configuration": {
       "type": "object",
-      "title": "Data REPL Test Configuration",
+      "title": "Data REPL Test",
       "properties": {
         "repl.agGridLicense": {
           "type": "string",
           "default": "",
-          "description": "Set the AgGrid License to enable enterprise features."
+          "description": "Set the AgGrid license text to enable enterprise features."
         },
         "repl.jarDownloadUrl": {
           "type": "string",

@@ -9,4 +9,4 @@ webpack.config.js
 **/.eslintrc.json
 **/*.map
 **/*.ts
-*.jar
+repl/**
