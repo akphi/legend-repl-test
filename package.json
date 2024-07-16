@@ -2,7 +2,7 @@
   "name": "data-repl-test",
   "displayName": "Data REPL Test",
   "description": "Data REPL Test",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "engines": {
     "vscode": "^1.89.0"
   },
